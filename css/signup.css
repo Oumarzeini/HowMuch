@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Baumans&family=Cairo:wght@200..1000&family=Dokdo&family=Eater&family=Emblema+One&family=Ephesis&family=Fjalla+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Katibeh&family=Lobster&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tangerine:wght@400;700&family=Yuji+Mai&display=swap');
+
+*{ 
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* || Utility */
+button {
+    cursor: pointer;
+}
+button:active {
+    transform: scale(0.9);
+}
+
+
+body {
+    min-height: 100vh;
+    font-family: system-ui; 
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+main {
+    width: 100%;
+}
+
+.main {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    box-shadow: 0 0 4px black;
+    border-radius: 15px;
+}
+
+.signup_div {
+    padding: 10px;
+}
+
+.logo_div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #ffefbb;
+    border-radius: 15px;
+}
+
+.first_logo_image {
+    width: 30%;
+    border-radius: 10px;
+}
+
+.motto {
+    font-weight: 700;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    animation: typing 15s steps(39) infinite , blink 0.7s step-end infinite alternate;
+}
+
+@keyframes typing {
+        0% {width: 0;}
+        30% {width: 39ch;}
+        70% {width:39ch;}
+        100% {width: 39ch}
+    }
+
+
+    @keyframes blink {
+        50% {border-color: transparent;}
+    }
+
+h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 50px;
+    width: 90%;
+    height: 400px;
+    align-items: space-around;
+    margin-inline: 2rem;
+}
+
+.email_div, .password_div {
+    display:flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    background-color: #DEE1E6FF;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+form button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    height: 50px;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.bottom_div {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #565D6DFF;
+}
+.bottom_div button {
+    border: none;
+    outline: none;
+    padding: 10px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: #565D6DFF;
+}
+
+ .feedback {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background-color: white;
+        color: rgb(78, 78, 78);
+        padding: 10px;
+        border-radius: 10px;
+        width: 500px;
+        gap: 20px;
+        /* min-height: 90px;
+        max-height: 150px; */
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 3px black;
+        font-family: system-ui;
+        padding-bottom: 2.5rem;
+        overflow: auto;
+        transform: translate(-10000px);
+    }
+
+.feedback.show {
+    transform: translateX(0);
+    transition: transform  0.5s linear ;
+}
+
+#feedback_message {
+    font-size: 1.1rem;
+    font-weight: 400;
+    max-width: 80%;
+}
+
+.feedback_icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.ok_btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 60px;
+    height: 25px;
+    background-color: green;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: system-ui;
+    letter-spacing: 1px;
+}
+.logo_image {
+    width: 100px;
+    height: auto;
+    margin-top :2rem;
+    border-radius: 15px;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        align-items: start;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-family: system-ui;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        
+    }
+
+    .logo_image {
+        width: 300px;
+        height: 300px;
+        margin-top: 0;
+        border-radius: 15px;
+        padding: 0;
+    }
+
+    main {
+        min-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .top_div {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .down_div {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .caption {
+        font-size: 1.4rem;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .sign_up, .sign_in {
+        width: 90%;
+        height: 60px;
+        font-size: 1.4rem;
+        border: none;
+        outline: none;
+        text-align: center;
+        margin: 1rem auto 0;
+        border-radius: 15px;
+        letter-spacing: 1px;
+    }
+
+    .sign_up {
+        /* margin-top: 3rem; */
+        background-image:  linear-gradient(to right, #e8d05c, #8f5d19);
+        color: white;
+    }
+
+    .sign_in {
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+    }
+
+    .hightlight {
+        color: #8f5d19;
+        font-weight: 700;
+    }
+
+
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid black;
+        animation: typing 10s steps(19) infinite , blink 0.7s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+        0% {width: 0;}
+        30% {width: 19ch;}
+        70% {width:19ch;}
+        100% {width: 19ch}
+    }
+
+
+    @keyframes blink {
+        50% {border-color: transparent;}
+    }
+    
+    .model {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+         background-color: #e8d05c;
+         width: 100%;
+         border-top-left-radius: 50px;
+         border-top-right-radius: 50px;
+         position: fixed;
+         bottom: 0;
+         height: 0;
+         overflow: hidden;
+         padding: 0;
+         transition: all 0.3s linear;
+    }
+
+    .show_model {
+        height: 500px;
+        padding: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        transition: all 0.3s linear;
+    }
+
+    .close_model {
+        width: 30%;
+        height: 40px;
+        font-size: 1.3rem;
+        margin-top: 20px;
+        background-color: transparent;
+        color: #86540f;
+        border: none;
+        font-weight: 500;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 50px;
+        width: 100%;
+        height: 100%;
+        align-items: space-around;
+        margin-inline: 2rem;
+    }
+
+    .email_div, .password_div {
+        display:flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    label {
+        /* color: #4cb0c2; */
+        font-weight: 800;
+        font-size: 1.1rem;
+        color: #86540f;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        height: 50px;
+        background-color: #f0e7d9;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        color: black;
+    }
+
+    form button {
+        border: none;
+        outline: none;
+        padding: 10px;
+        height: 50px;
+        background-color: green;
+        color: white;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+    }
+
+    .bottom_div {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: #565D6DFF;
+    }
+    .bottom_div button {
+        border: none;
+        outline: none;
+        padding: 10px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        font-size: 1.2rem;
+        color: #565D6DFF;
+    }
+
+    .feedback {
+        position: absolute;
+        bottom: 100px;
+        right: 50px;
+        background-color: white;
+        color: rgb(78, 78, 78);
+        padding: 10px;
+        border-radius: 10px;
+        width: 300px;
+        gap: 20px;
+        min-height: 90px;
+        max-height: 150px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 3px black;
+        font-family: system-ui;
+        padding-bottom: 2.5rem;
+        overflow: auto;
+        transform: translateX(-1000px);
+    }
+
+    .feedback.show {
+        transform: translateX(0);
+        transition: transform  0.3s linear ;
+    }
+
+    #feedback_message {
+        font-size: 1.1rem;
+        font-weight: 400;
+        max-width: 80%;
+    }
+
+    .feedback_icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .ok_btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 60px;
+        height: 25px;
+        background-color: green;
+        color: white;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        font-family: system-ui;
+        letter-spacing: 1px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+    main {
+        width: 80%;
+    }
+
+    .logo_image {
+        margin-top: 5rem;
+    }
+}

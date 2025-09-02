@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+body {
+    background-color: white;
+    min-height: 100dvh;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+}
+
+body.no_scroll {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.back_arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+
+header p {
+    font-weight: 600;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 50px;
+}
+
+form {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.input_label_div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid gray;
+}
+
+.add_unit_field_btn {
+    width: 80%;
+    height: 50px;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add_icon {
+    width: 30px;
+    height: 30px;
+}
+
+.save_product_btn {
+    width: 80%;
+    height: 50px;
+    background-color: green;
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 1px;
+}
+
+.overlay {
+    display: none;
+    position : fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.387);
+    z-index: 100;
+}
+
+.model {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 101;
+    background-color: white;
+    padding: 20px;
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 4px black;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.model h1 {
+    margin: 1rem;
+    margin-left: 0;
+}
+
+.model input {
+    margin-bottom: 4rem;
+}
+
+.btns_div {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.btns_div button {
+    padding: 10px;
+    outline: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    width: 80px;
+}
+
+.add_unit {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+.cancel_unit {
+    color: black;
+    border: 1px solid black;
+    background-color: transparent;
+}
+
+.feedback_div {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    background-color: white;
+    box-shadow: 0 0 4px black;
+    border-radius: 10px;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+    transform: translateX(-1000px);
+}
+
+.show_feedback {
+    width: 60px;
+    transform: translateX(0);
+    transition: transform 0.3s linear;
+}
+
+.animate_in {
+    width: 300px;
+    transition: all 0.3s linear;
+}
+
+.animate_out {
+    width: 60px;
+    transition: width 0.3s linear ;
+}
+
+.feedback_msg {
+    width: 0;
+    overflow: hidden;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.show_msg {
+    width: 100%;
+}

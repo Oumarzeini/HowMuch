@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="images/logo_with_bg.jpg" />
+    <link rel="stylesheet" href="css/prices.css" />
+    <script src="js/prices.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Products Prices</h1>
+
+      <form id="search_form">
+        <i class="fa-solid fa-search"></i>
+        <input
+          placeholder="search products"
+          type="text"
+          name="search"
+          id="search"
+        />
+      </form>
+    </header>
+
+    <main>
+      <div id="products_list" class="products_list"></div>
+
+      <!-- DELETE MODEL -->
+      <div id="delete_model" class="delete_model">
+        <p>Delete this product ?</p>
+        <div class="delete_btns_div">
+          <button id="cancel_delete" class="cancel_delete">Cancel</button>
+          <button id="delete" class="delete">Delete</button>
+        </div>
+      </div>
+    </main>
+
+    <nav>
+      <ul>
+        <li onclick="window.location.href='home.html'">
+          <svg
+            class="home_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"
+              />
+              <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" />
+            </g>
+          </svg>
+          <p>Home</p>
+        </li>
+        <li onclick="window.location.href= 'prices.html'">
+          <svg
+            class="prices_icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <path
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 22a8 8 0 0 0 8-8c0-6-8-12-8-12c-.388 2.487-.768 3.822-2 6c-1.2-.555-1.5-1-2-2.25C6 8 4 11 4 14a8 8 0 0 0 8 8m-2-5l4-4m-4 0h.009m3.982 4H14"
+              color="currentColor"
+            />
+          </svg>
+          <p>Prices</p>
+        </li>
+
+        <li onclick="window.location.href='stock.html'">
+          <svg
+            class="inventory_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#565d6d"
+          >
+            <path
+              fill="#565d6d"
+              d="M1024 1000v959l-64 32l-832-415V536l832-416l832 416v744h-128V680l-640 320zm-64-736L719 384l621 314l245-122l-625-312zm-64 1552v-816L256 680v816l640 320zM335 576l625 312l238-118l-622-314l-241 120zm1073 1216v-128h640v128h-640zm0-384h640v128h-640v-128zm-256 640v-128h128v128h-128zm0-512v-128h128v128h-128zm0 256v-128h128v128h-128zm-128 24h1h-1zm384 232v-128h640v128h-640z"
+            />
+          </svg>
+          <p>Stockage</p>
+        </li>
+        <li onclick="window.location.href='profile.html'">
+          <svg
+            class="profile_icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z"
+              />
+              <path
+                d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"
+              />
+            </g>
+          </svg>
+          <p>Profile</p>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- ADD UNIT MODEL -->
+    <div id="model" class="model">
+      <h1>Add unit name</h1>
+      <input
+        maxlength="15"
+        autocomplete="off"
+        type="text"
+        name="name"
+        id="new_unit_name"
+        placeholder="add unit name here"
+      />
+      <div class="btns_div">
+        <button id="cancel_unit" class="cancel_unit">Cancel</button>
+        <button id="add_unit" class="add_unit">Add</button>
+      </div>
+    </div>
+
+    <div id="warning_feedback_div" class="feedback_div">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 416 472"
+        fill="#f00000"
+      >
+        <path
+          fill="#f00000"
+          d="M10 402q19 27 53 27h288q32 0 53-27q21-32 5-67l-75-162l-71-132Q247 7 208 7q-40 0-55 34L82 173L5 333q-13 39 5 69zm36-47l75-160l70-133q6-12 19-12t19 12l69 133l76 162q9 14-2 23q-9 9-17 9H63q-8 0-17-9q-6-16 0-25zm162-75q21 0 21-21v-86q0-21-21-21t-21 21v86q0 21 21 21zm21 43q0 8-6 14.5t-15 6.5t-15-6.5t-6-14.5q0-9 6-15.5t15-6.5t15 6.5t6 15.5z"
+        />
+      </svg>
+      <p id="warning_msg" class="feedback_msg"></p>
+    </div>
+
+    <!-- Update product Model -->
+
+    <div id="updateModel" class="updateModel">
+      <button id="cancel_btn" class="cancel">Cancel</button>
+      <form id="update_form"></form>
+
+      <button id="add_unit_field_btn" class="add_unit_field_btn">
+        <svg
+          class="add_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200"
+          viewBox="0 0 16 16"
+          fill="#000000"
+        >
+          <path
+            fill="#000000"
+            d="M8 15c-3.86 0-7-3.14-7-7s3.14-7 7-7s7 3.14 7 7s-3.14 7-7 7ZM8 2C4.69 2 2 4.69 2 8s2.69 6 6 6s6-2.69 6-6s-2.69-6-6-6Z"
+          />
+          <path
+            fill="#000000"
+            d="M8 11.5c-.28 0-.5-.22-.5-.5V5c0-.28.22-.5.5-.5s.5.22.5.5v6c0 .28-.22.5-.5.5Z"
+          />
+          <path
+            fill="#000000"
+            d="M11 8.5H5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h6c.28 0 .5.22.5.5s-.22.5-.5.5Z"
+          />
+        </svg>
+        <p>Add Another Unit Field</p>
+      </button>
+
+      <button type="submit" id="save_update_btn" class="save_product_btn">
+        Save Product
+      </button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock</title>
+    <link rel="icon" href="images/logo_with_bg.jpg" />
+    <link rel="stylesheet" href="css/stock.css" />
+    <script src="js/stock.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="header">Stockage</h1>
+
+      <form id="search_form">
+        <svg
+          class="search_svg"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200"
+          viewBox="0 0 32 32"
+          fill="gray"
+        >
+          <path
+            fill="gray"
+            d="m29.772 26.433l-7.126-7.126a10.43 10.43 0 0 0 1.524-5.42c0-5.794-4.692-10.486-10.482-10.488c-5.79 0-10.484 4.693-10.484 10.485c0 5.79 4.693 10.48 10.484 10.48c1.987 0 3.84-.562 5.422-1.522l7.128 7.127l3.534-3.537zM7.202 13.885a6.496 6.496 0 0 1 6.485-6.486a6.493 6.493 0 0 1 6.484 6.485a6.494 6.494 0 0 1-6.483 6.484a6.496 6.496 0 0 1-6.484-6.485z"
+          />
+        </svg>
+        <input
+          placeholder="search by name , unit..."
+          type="text"
+          name="search"
+          id="search"
+        />
+      </form>
+    </header>
+
+    <svg
+      class="add_svg add_product"
+      id="add_svg"
+      xmlns="http://www.w3.org/2000/svg"
+      width="200"
+      height="200"
+      viewBox="0 0 20 20"
+      fill="#000000"
+    >
+      <path fill="#000000" d="M11 9V4H9v5H4v2h5v5h2v-5h5V9z" />
+    </svg>
+
+    <main>
+      <div id="products_list" class="products_list">
+        <button id="add_product_btn" class="add_product_btn add_product">
+          <p>Add products to Stockage</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 20 20"
+            fill="#fff"
+          >
+            <path fill="#fff" d="M11 9V4H9v5H4v2h5v5h2v-5h5V9z" />
+          </svg>
+        </button>
+
+        <div class="product_div">
+          <div class="name_div">
+            <p class="name" id="name">Tomato</p>
+            <p id="unit" class="unit">5kg Bag</p>
+          </div>
+          <div class="count_div">
+            <p id="available" class="available">Available :</p>
+            <p id="stock_count" class="stock_count">
+              <span id="decrease">-</span> 62 <span id="increase">+</span>
+            </p>
+            <p class="status">Medium Stock</p>
+          </div>
+          <div class="deletion_div">
+            <p>Delete</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav>
+      <ul>
+        <li onclick="window.location.href='home.html'">
+          <svg
+            class="home_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"
+              />
+              <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" />
+            </g>
+          </svg>
+          <p>Home</p>
+        </li>
+        <li onclick="window.location.href= 'prices.html'">
+          <svg
+            class="all_icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <path
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M12 22a8 8 0 0 0 8-8c0-6-8-12-8-12c-.388 2.487-.768 3.822-2 6c-1.2-.555-1.5-1-2-2.25C6 8 4 11 4 14a8 8 0 0 0 8 8m-2-5l4-4m-4 0h.009m3.982 4H14"
+              color="currentColor"
+            />
+          </svg>
+          <p>Prices</p>
+        </li>
+
+        <li>
+          <svg
+            class="stockage_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#565d6d"
+          >
+            <path
+              fill="#565d6d"
+              d="M1024 1000v959l-64 32l-832-415V536l832-416l832 416v744h-128V680l-640 320zm-64-736L719 384l621 314l245-122l-625-312zm-64 1552v-816L256 680v816l640 320zM335 576l625 312l238-118l-622-314l-241 120zm1073 1216v-128h640v128h-640zm0-384h640v128h-640v-128zm-256 640v-128h128v128h-128zm0-512v-128h128v128h-128zm0 256v-128h128v128h-128zm-128 24h1h-1zm384 232v-128h640v128h-640z"
+            />
+          </svg>
+          <p>Stockage</p>
+        </li>
+        <li onclick="window.location.href='profile.html'">
+          <svg
+            class="profile_icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z"
+              />
+              <path
+                d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"
+              />
+            </g>
+          </svg>
+          <p>Profile</p>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- MODELS -->
+
+    <!-- UPDATE COUNT MODEL -->
+    <div class="update_count_div" id="update_count_div">
+      <p>Add a custom number :</p>
+      <input type="number" id="update_count" maxlength="15" />
+      <button id="add_count_btn" class="add_count_btn">OK</button>
+      <button id="cancel_add_count_btn" class="cancel_add_count_btn">
+        cancel
+      </button>
+    </div>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- WARNING MODEL -->
+    <div id="warning_feedback_div" class="feedback_div">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 416 472"
+        fill="#f00000"
+      >
+        <path
+          fill="#f00000"
+          d="M10 402q19 27 53 27h288q32 0 53-27q21-32 5-67l-75-162l-71-132Q247 7 208 7q-40 0-55 34L82 173L5 333q-13 39 5 69zm36-47l75-160l70-133q6-12 19-12t19 12l69 133l76 162q9 14-2 23q-9 9-17 9H63q-8 0-17-9q-6-16 0-25zm162-75q21 0 21-21v-86q0-21-21-21t-21 21v86q0 21 21 21zm21 43q0 8-6 14.5t-15 6.5t-15-6.5t-6-14.5q0-9 6-15.5t15-6.5t15 6.5t6 15.5z"
+        />
+      </svg>
+      <p id="warning_msg" class="feedback_msg"></p>
+    </div>
+
+    <!-- DELETION MODEL -->
+    <div id="delete_model" class="delete_model">
+      <p>Delete this product ?</p>
+      <div class="delete_btns_div">
+        <button id="cancel_delete" class="cancel_delete">Cancel</button>
+        <button id="delete" class="delete">Delete</button>
+      </div>
+    </div>
+
+    <!-- ADD PRODUCT MODEL -->
+    <form id="addProductModel" class="model">
+      <div class="label_input_div">
+        <label for="pro_name">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#000000"
+          >
+            <path
+              fill="#000000"
+              d="M128 1792q0 27 10 50t27 40t41 28t50 10h640l257 128H256q-53 0-99-20t-82-55t-55-81t-20-100V256q0-49 21-95t57-82t82-57t96-22h1408v681l-128-64V128H256q-23 0-46 11t-41 30t-29 41t-12 46v1316q29-17 61-26t67-10h512v128H256q-27 0-50 10t-40 27t-28 41t-10 50zm1920-777v762l-576 287l-576-287v-762l576-287l576 287zm-576-144l-369 184l369 184l369-184l-369-184zm-448 827l384 191v-539l-384-192v540zm896 0v-540l-384 192v539l384-191z"
+            />
+          </svg>
+          Product name :</label
+        >
+        <input
+          maxlength="15"
+          autocomplete="off"
+          type="text"
+          id="pro_name"
+          name="pro_name"
+          placeholder="e.g: sugar"
+          required
+        />
+      </div>
+
+      <div class="label_input_div">
+        <label for="pro_unit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#000000"
+          >
+            <path
+              fill="#000000"
+              d="m1344 2l704 352v785l-128-64V497l-512 256v258l-128 64V753L768 497v227l-128-64V354L1344 2zm0 640l177-89l-463-265l-211 106l497 248zm315-157l182-91l-497-249l-149 75l464 265zm-507 654l-128 64v-1l-384 192v455l384-193v144l-448 224L0 1735v-676l576-288l576 288v80zm-640 710v-455l-384-192v454l384 193zm64-566l369-184l-369-185l-369 185l369 184zm576-1l448-224l448 224v527l-448 224l-448-224v-527zm384 576v-305l-256-128v305l256 128zm384-128v-305l-256 128v305l256-128zm-320-288l241-121l-241-120l-241 120l241 121z"
+            />
+          </svg>
+          Unit :</label
+        >
+        <input
+          type="text"
+          id="pro_unit"
+          maxlength="15"
+          placeholder="eg: 25kg bag"
+          required
+        />
+      </div>
+
+      <div class="label_input_div">
+        <label for="pro_count"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 32 32"
+            fill="#000000"
+          >
+            <path fill="#000000" d="M8 18h6v2H8zm0 4h10v2H8z" />
+            <path
+              fill="#000000"
+              d="M26 4H6a2.002 2.002 0 0 0-2 2v20a2.002 2.002 0 0 0 2 2h20a2.002 2.002 0 0 0 2-2V6a2.002 2.002 0 0 0-2-2Zm-8 2v4h-4V6ZM6 26V6h6v6h8V6h6l.001 20Z"
+            />
+          </svg>
+          Available Count :</label
+        >
+        <input
+          type="number"
+          id="pro_count"
+          placeholder="eg: 100"
+          name="count"
+          required
+        />
+      </div>
+
+      <div class="btns_div">
+        <button type="reset" id="cancel_add_pro" class="cancel_unit">
+          Cancel
+        </button>
+        <button type="submit" id="submitBtn" class="add_unit">Add</button>
+      </div>
+    </form>
+  </body>
+</html>

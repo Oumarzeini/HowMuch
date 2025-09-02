@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add product</title>
+    <link rel="icon" href="images/logo_with_bg.jpg" />
+    <link rel="stylesheet" href="css/add_product.css" />
+    <script type="module" src="js/add_product.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init();
+    </script> -->
+  </head>
+  <body>
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- ADD UNIT MODEL -->
+    <div id="model" class="model">
+      <h1>Add unit name</h1>
+      <input
+        autocomplete="off"
+        type="text"
+        name="name"
+        id="new_unit_name"
+        placeholder="add unit name here"
+      />
+      <div class="btns_div">
+        <button id="cancel_unit" class="cancel_unit">Cancel</button>
+        <button id="add_unit" class="add_unit">Add</button>
+      </div>
+    </div>
+
+    <!-- FEEDBACK MODEL -->
+    <div id="feedback_div" class="feedback_div">
+      <svg
+        class="success_svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 1024 1024"
+        fill="#1dad00"
+      >
+        <path
+          fill="#1dad00"
+          d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm-55.808 536.384l-99.52-99.584a38.4 38.4 0 1 0-54.336 54.336l126.72 126.72a38.272 38.272 0 0 0 54.336 0l262.4-262.464a38.4 38.4 0 1 0-54.272-54.336L456.192 600.384z"
+        />
+      </svg>
+      <p id="feedback_msg" class="feedback_msg">Product Added</p>
+    </div>
+
+    <div id="warning_feedback_div" class="feedback_div">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="0 0 416 472"
+        fill="#f00000"
+      >
+        <path
+          fill="#f00000"
+          d="M10 402q19 27 53 27h288q32 0 53-27q21-32 5-67l-75-162l-71-132Q247 7 208 7q-40 0-55 34L82 173L5 333q-13 39 5 69zm36-47l75-160l70-133q6-12 19-12t19 12l69 133l76 162q9 14-2 23q-9 9-17 9H63q-8 0-17-9q-6-16 0-25zm162-75q21 0 21-21v-86q0-21-21-21t-21 21v86q0 21 21 21zm21 43q0 8-6 14.5t-15 6.5t-15-6.5t-6-14.5q0-9 6-15.5t15-6.5t15 6.5t6 15.5z"
+        />
+      </svg>
+      <p id="warning_msg" class="feedback_msg"></p>
+    </div>
+
+    <header>
+      <svg
+        onclick="window.location.href='home.html'"
+        class="back_arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="200"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path
+          fill="#000000"
+          d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225L16 22Z"
+        />
+      </svg>
+
+      <p>Add New Product</p>
+    </header>
+    <main>
+      <form id="form">
+        <div class="input_label_div">
+          <label for="name">Product Name</label>
+          <input
+            id="product_name"
+            type="text"
+            placeholder="e.g, Organic Coffee Beans"
+          />
+        </div>
+
+        <h2>Standard Pricing Units</h2>
+
+        <div class="input_label_div">
+          <label for="10kg">Price per 10KG</label>
+          <input
+            data-unit="10KG"
+            class="unit"
+            id="10kg_unit"
+            type="text"
+            placeholder="e.g, 14 000 MRU"
+          />
+        </div>
+
+        <div class="input_label_div">
+          <label for="20KG">Price per 20KG</label>
+          <input
+            data-unit="20KG"
+            class="unit"
+            id="20kg_unit"
+            type="text"
+            placeholder="e.g, 25 000 MRU"
+          />
+        </div>
+
+        <div class="input_label_div">
+          <label for="name">Price per 50KG</label>
+          <input
+            data-unit="50KG"
+            class="unit"
+            id="50kg_unit"
+            type="text"
+            placeholder="e.g, 30 000 MRU"
+          />
+        </div>
+      </form>
+
+      <button id="add_unit_field_btn" class="add_unit_field_btn">
+        <svg
+          class="add_icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="200"
+          height="200"
+          viewBox="0 0 16 16"
+          fill="#000000"
+        >
+          <path
+            fill="#000000"
+            d="M8 15c-3.86 0-7-3.14-7-7s3.14-7 7-7s7 3.14 7 7s-3.14 7-7 7ZM8 2C4.69 2 2 4.69 2 8s2.69 6 6 6s6-2.69 6-6s-2.69-6-6-6Z"
+          />
+          <path
+            fill="#000000"
+            d="M8 11.5c-.28 0-.5-.22-.5-.5V5c0-.28.22-.5.5-.5s.5.22.5.5v6c0 .28-.22.5-.5.5Z"
+          />
+          <path
+            fill="#000000"
+            d="M11 8.5H5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5h6c.28 0 .5.22.5.5s-.22.5-.5.5Z"
+          />
+        </svg>
+        <p>Add Another Unit Field</p>
+      </button>
+
+      <button type="submit" id="save_product_btn" class="save_product_btn">
+        Save Product
+      </button>
+    </main>
+  </body>
+</html>

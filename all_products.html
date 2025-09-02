@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="images/logo_with_bg.jpg" />
+    <link rel="stylesheet" href="css/all_products.css" />
+    <script type="module" src="js/all_products.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="header">All Products</h1>
+
+      <form id="form">
+        <i class="fa-solid fa-search"></i>
+        <input
+          placeholder="search products"
+          type="text"
+          name="search"
+          id="search"
+        />
+      </form>
+    </header>
+
+    <main>
+      <div id="products_list" class="products_list"></div>
+    </main>
+
+    <nav>
+      <ul>
+        <li onclick="window.location.href='home.html'">
+          <svg
+            class="home_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            >
+              <path
+                d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"
+              />
+              <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" />
+            </g>
+          </svg>
+          <p>Home</p>
+        </li>
+        <li>
+          <svg
+            class="all_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#565d6d"
+          >
+            <path
+              fill="#565d6d"
+              d="m960 120l832 416v1040l-832 415l-832-415V536l832-416zm625 456L960 264L719 384l621 314l245-122zM960 888l238-118l-622-314l-241 120l625 312zM256 680v816l640 320v-816L256 680zm768 1136l640-320V680l-640 320v816z"
+            />
+          </svg>
+          <p>All products</p>
+        </li>
+        <li onclick="window.location.href='edit.html'">
+          <svg
+            class="edit_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#565d6d"
+          >
+            <path
+              fill="#565d6d"
+              d="M896 1537V936L256 616v880l544 273l-31 127l-641-320V472L960 57l832 415v270q-70 11-128 45V616l-640 320v473l-128 128zM754 302l584 334l247-124l-625-313l-206 103zm206 523l240-120l-584-334l-281 141l625 313zm888 71q42 0 78 15t64 41t42 63t16 79q0 39-15 76t-43 65l-717 717l-377 94l94-377l717-716q29-29 65-43t76-14zm51 249q21-21 21-51q0-31-20-50t-52-20q-14 0-27 4t-23 15l-692 692l-34 135l135-34l692-691z"
+            />
+          </svg>
+          <p>Edit</p>
+        </li>
+        <li onclick="window.location.href='stock.html'">
+          <svg
+            class="inventory_icon"
+            xmlns="http://www.w3.org/2000/svg "
+            width="200"
+            height="200"
+            viewBox="0 0 2048 2048"
+            fill="#565d6d"
+          >
+            <path
+              fill="#565d6d"
+              d="M1024 1000v959l-64 32l-832-415V536l832-416l832 416v744h-128V680l-640 320zm-64-736L719 384l621 314l245-122l-625-312zm-64 1552v-816L256 680v816l640 320zM335 576l625 312l238-118l-622-314l-241 120zm1073 1216v-128h640v128h-640zm0-384h640v128h-640v-128zm-256 640v-128h128v128h-128zm0-512v-128h128v128h-128zm0 256v-128h128v128h-128zm-128 24h1h-1zm384 232v-128h640v128h-640z"
+            />
+          </svg>
+          <p>Stock</p>
+        </li>
+        <li>
+          <svg
+            class="profile_icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 24 24"
+            fill="#565d6d"
+          >
+            <g
+              fill="none"
+              stroke="#565d6d"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+            >
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2Z"
+              />
+              <path
+                d="M4.271 18.346S6.5 15.5 12 15.5s7.73 2.846 7.73 2.846M12 12a3 3 0 1 0 0-6a3 3 0 0 0 0 6Z"
+              />
+            </g>
+          </svg>
+          <p>Profile</p>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- PROFILE SEARCH ICON
+      <svg class="nav_icon"  xmlns="http://www.w3.org/2000/svg " width="200" height="200" viewBox="0 0 2048 2048" fill="#565d6d"><path fill="#565d6d" d="M1468 1139q-52 43-89 96q-83-42-173-62t-184-21q-108 0-206 27t-184 76t-154 119t-119 155t-76 185t-27 206H128q0-146 43-281t124-247t193-196t254-129q-54-36-96-83t-72-102t-46-116t-16-126q0-106 40-199t110-162t163-110t199-41q106 0 199 40t162 110t110 163t41 199q0 65-16 126t-45 117t-73 102t-97 83q43 14 83 31t80 40zM640 640q0 80 30 149t82 122t122 83t150 30q79 0 149-30t122-82t83-122t30-150q0-79-30-149t-82-122t-123-83t-149-30q-80 0-149 30t-122 82t-83 123t-30 149zm1090 511q66 0 125 25t102 69t69 102t26 125q0 66-25 124t-69 102t-103 69t-125 26q-97 0-177-54l-292 292q-19 19-45 19t-45-19t-19-45q0-26 19-45l292-292q-54-80-54-177q0-66 25-124t69-102t102-69t125-26zm0 514q40 0 75-15t61-41t42-62t16-75q0-40-15-75t-42-61t-61-42t-76-15q-40 0-75 15t-61 42t-42 61t-15 75q0 40 15 75t41 61t62 42t75 15z"/></svg > -->
+  </body>
+</html>
