@@ -84,7 +84,7 @@ const getUserLocation = async () => {
   }
 };
 
-//getUserLocation();
+getUserLocation();
 
 const profilePhotoInput = document.getElementById("profile_photo");
 const profileImage = document.getElementById("profile_img");
