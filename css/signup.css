@@ -40,6 +40,7 @@ main {
 
 .main {
     width: 70%;
+    height: fit-content;
     display: grid;
     grid-template-columns: 50% 50%;
     box-shadow: 0 0 4px black;
@@ -48,6 +49,7 @@ main {
 
 .signup_div {
     padding: 10px;
+    height: fit-content;
 }
 
 .logo_div {
@@ -102,7 +104,7 @@ form {
     margin-inline: 2rem;
 }
 
-.email_div, .password_div {
+.email_div, .password_div, .full_name_div {
     display:flex;
     flex-flow: column nowrap;
     gap: 10px;
@@ -144,7 +146,9 @@ form button {
     align-items: center;
     gap: 20px;
     color: #565D6DFF;
+    margin: 3rem auto 1rem;
 }
+
 .bottom_div button {
     border: none;
     outline: none;
@@ -157,9 +161,13 @@ form button {
     color: #565D6DFF;
 }
 
+.bottom_div p {
+    text-decoration: underline;
+    cursor: pointer;
+}
  .feedback {
         position: absolute;
-        top: 50px;
+        top: 99px;
         left: 50px;
         background-color: white;
         color: rgb(78, 78, 78);
@@ -229,6 +237,9 @@ form button {
         font-family: system-ui;
         padding: 0;
         margin: 0;
+    }
+    body.no_scroll {
+        overflow: hidden;
     }
 
     header {
@@ -375,14 +386,14 @@ form button {
         display: flex;
         flex-direction: column;
         padding: 10px;
-        gap: 50px;
+        gap: 30px;
         width: 100%;
         height: 100%;
         align-items: space-around;
         margin-inline: 2rem;
     }
 
-    .email_div, .password_div {
+    .email_div, .password_div, .full_name_div {
         display:flex;
         flex-flow: column nowrap;
         gap: 10px;

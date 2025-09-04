@@ -125,7 +125,7 @@ main::-webkit-scrollbar {
 
 .bio_div {
     width: 80%;
-    margin: 2rem auto 0;
+    margin: 2rem auto 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,6 +140,7 @@ main::-webkit-scrollbar {
     color: white;
     background-color: green;
     letter-spacing: 1px;
+    font-size: 1rem;
 }
 
 .bio_div p {
@@ -151,7 +152,7 @@ main::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 4rem auto 1rem;
+    margin: 7rem auto 1rem;
     gap: 15px;
     padding: 15px;
     border-radius: 10px;
@@ -314,13 +315,39 @@ svg {
 .edit_profile_model {
     position: fixed;
     top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    z-index: 600;
+    background-color: white;
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.1s linear;
+}
+
+.edit_profile_model.show {
+    width: 100vw;
+    padding-bottom: 100px;
+    overflow: auto;
+    transition : all 0.1s linear;
+}
+
+/* .edit_profile_model {
+    position: fixed;
+    top: 0;
     width: 100vw;
     height: 100%;
     z-index: 600;
     background-color: white;
     overflow: auto;
     padding-bottom: 100px;
-    display: none;
+} */
+
+.back_arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 500;
 }
 
 #edit_profile_form {
@@ -351,8 +378,10 @@ svg {
 }
 
 .img_container {
-    width: 150px;
-    height: 150px;
+    min-width: 150px ;
+    max-width: 150px ;
+    min-height: 150px;
+    max-height: 150px;
     overflow: hidden;
     border-radius: 50%;
      border: 3px solid green;
@@ -427,6 +456,19 @@ svg {
     height: 150px;
     font-size: 1.1rem;
     font-family: system-ui;
+}
+
+#submit_profile_changes_btn {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: green;
+    font-size: 1.1rem;
 }
 
 .delete_model {
