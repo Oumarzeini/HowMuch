@@ -41,6 +41,7 @@
           <img id="profile_img" class="profile_img" />
         </div>
         <figcaption id="user_name"></figcaption>
+
         <div class="location_div">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,10 +58,82 @@
           <p id="user_location"></p>
         </div>
         <div class="rating_div">
-          Rate : &starf; &starf; &starf; &starf; &star;
+          <svg
+            class="star"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 16 16"
+            fill=""
+          >
+            <path
+              fill="green"
+              d="M12.9 15.4L8 12.8l-4.9 2.6L4 10L0 6.1l5.5-.8l2.4-5l2.4 5l5.5.8L12 10l.9 5.4z"
+            />
+          </svg>
+
+          <svg
+            class="star"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 16 16"
+            fill=""
+          >
+            <path
+              fill="green"
+              d="M12.9 15.4L8 12.8l-4.9 2.6L4 10L0 6.1l5.5-.8l2.4-5l2.4 5l5.5.8L12 10l.9 5.4z"
+            />
+          </svg>
+
+          <svg
+            class="star"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 16 16"
+            fill=""
+          >
+            <path
+              fill="green"
+              d="M12.9 15.4L8 12.8l-4.9 2.6L4 10L0 6.1l5.5-.8l2.4-5l2.4 5l5.5.8L12 10l.9 5.4z"
+            />
+          </svg>
+
+          <svg
+            class="star"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 16 16"
+            fill=""
+          >
+            <path
+              fill="white"
+              d="M12.9 15.4L8 12.8l-4.9 2.6L4 10L0 6.1l5.5-.8l2.4-5l2.4 5l5.5.8L12 10l.9 5.4z"
+            />
+          </svg>
+
+          <svg
+            class="star"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 16 16"
+            fill=""
+          >
+            <path
+              fill="white"
+              d="M12.9 15.4L8 12.8l-4.9 2.6L4 10L0 6.1l5.5-.8l2.4-5l2.4 5l5.5.8L12 10l.9 5.4z"
+            />
+          </svg>
         </div>
         <div class="bio_div">
-          <button class="add_bio_btn" id="add_bio_btn">Add A Bio</button>
+          <button class="add_bio_btn" id="add_bio_btn">
+            <a href="#bio">
+              Add a clear and straight to the point Bio to attrackt customers
+            </a>
+          </button>
           <p class="bio" id="user_bio"></p>
         </div>
       </figure>
@@ -91,7 +164,7 @@
             </svg>
             Products tracked :
           </p>
-          <p class="products_count">132</p>
+          <p id="products_count" class="products_count">132</p>
         </div>
       </div>
 
@@ -99,6 +172,11 @@
         <button id="edit_profile_btn" class="edit_profile">Edit Profile</button>
         <button class="message">See Products</button>
       </div>
+
+      <!-- <div class="statistics">
+        <h2>Highest stock products :</h2>
+        <h2>Lowest stock products :</h2>
+      </div> -->
 
       <div class="make_rate_div">
         <p>Rate this Trader :</p>
@@ -118,7 +196,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <p>Like</p>
+            <p>GOOD</p>
           </div>
 
           <div class="down_thumb_div">
@@ -134,7 +212,7 @@
                 d="M9.4 16H3a2 2 0 0 1-2-2v-2.104a2 2 0 0 1 .15-.762L4.246 3.62A1 1 0 0 1 5.17 3H22a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-3.482a1 1 0 0 0-.817.423l-5.453 7.726a.5.5 0 0 1-.632.159L9.802 22.4a2.5 2.5 0 0 1-1.305-2.853L9.4 16Zm7.6-2.588V5H5.84L3 11.896V14h6.4a2 2 0 0 1 1.938 2.493l-.903 3.548a.5.5 0 0 0 .261.571l.661.33l4.71-6.672c.25-.354.57-.644.933-.857ZM19 13h2V5h-2v8Z"
               />
             </svg>
-            <p>Dislike</p>
+            <p>BAD</p>
           </div>
         </div>
       </div>
