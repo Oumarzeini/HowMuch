@@ -197,11 +197,7 @@ main {
     height: 17px;
 }
 
-.delete {
-    background-color: red;
-    color: white;
-    border: none;
-}
+
 
 .delete svg {
     fill: white;
@@ -265,6 +261,12 @@ svg {
     font-weight: 500;
 }
 
+.home_icon {
+    & path {   
+        stroke-width: 1.5px;
+    }
+}
+
 
 .delete_model {
     position: fixed;
@@ -284,7 +286,7 @@ svg {
     display: none;
 }
 
-.delete_model p{
+.odel p{
     font-size: 1.1rem;
 }
  
@@ -311,6 +313,12 @@ svg {
 
 .cancel_delete {
     background-color: transparent;
+    border: none;
+}
+
+.delete {
+    background-color: red;
+    color: white;
     border: none;
 }
 
@@ -532,3 +540,17 @@ svg {
 .show_msg {
     width: 100%;
 }
+
+
+/* body, header, main, .product_container, nav {
+    background-color: #1a1826;
+    color: #c39ff2;
+}
+
+.product_container button, svg {
+    color: #c39ff2;
+}
+
+* {
+    border-color: #c39ff2;
+} */

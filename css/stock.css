@@ -352,6 +352,12 @@ svg {
     font-weight: 500;
 }
 
+.home_icon {
+    & path {   
+        stroke-width: 1.5px;
+    }
+}
+
 
 .delete_model {
     position: fixed;

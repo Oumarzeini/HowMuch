@@ -182,6 +182,7 @@ svg {
 .home_icon {
     & path {   
         stroke: green;
+        stroke-width: 1.5px;
     }
 }
 

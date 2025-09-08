@@ -290,7 +290,3 @@ const signIn = async (email, password) => {
     window.location.href = "home.html";
   }
 };
-
-window.addEventListener("resize", () => {
-  window.location.reload();
-});
