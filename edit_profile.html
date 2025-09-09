@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/edit_profile.css" />
+    <script type="module" src="js/edit_profile.js" defer></script>
+  </head>
+  <body>
+    <header><h2 class="header">Edit Profile</h2></header>
+
+    <main id="edit_profile_model" class="edit_profile_model">
+      <svg
+        onclick="window.location.href='profile.html'"
+        id="back_arrow"
+        class="back_arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="200"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path
+          fill="#000000"
+          d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225L16 22Z"
+        />
+      </svg>
+
+      <form id="edit_profile_form">
+        <div class="edit_profile_img">
+          <p>Profile Photo</p>
+          <div class="img_container">
+            <img
+              src="images/profileImage.jpg"
+              width="50"
+              height="50"
+              id="preview_img"
+            />
+          </div>
+          <div class="edit_profile_photo_div">
+            <label for="profile_photo"
+              >Choose a photo
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                viewBox="0 0 24 24"
+                fill="#fff"
+              >
+                <path
+                  fill="#fff"
+                  d="M19 4H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3ZM5 18a1 1 0 0 1-1-1v-2.42l3.3-3.29a1 1 0 0 1 1.4 0L15.41 18Zm15-1a1 1 0 0 1-1 1h-.77l-3.81-3.83l.88-.88a1 1 0 0 1 1.4 0l3.3 3.29Zm0-3.24l-1.88-1.87a3.06 3.06 0 0 0-4.24 0l-.88.88l-2.88-2.88a3.06 3.06 0 0 0-4.24 0L4 11.76V7a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"
+                />
+              </svg>
+            </label>
+            <svg
+              onclick="deleteProfilePhoto()"
+              id="delete_profile_photo"
+              class="delete_profile_photo"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 304 384"
+              fill="red"
+            >
+              <path
+                fill="red"
+                d="M21 341V85h256v256q0 18-12.5 30.5T235 384H64q-18 0-30.5-12.5T21 341zM299 21v43H0V21h75L96 0h107l21 21h75z"
+              />
+            </svg>
+            <input type="file" accept="image/*" id="profile_photo" />
+          </div>
+        </div>
+
+        <div class="edit_information">
+          <h3>Personal Information</h3>
+
+          <div class="label_input_div">
+            <label for="full_name">Full Name</label>
+            <input
+              type="text"
+              class="full_name_input"
+              name="full_name"
+              id="full_name"
+            />
+          </div>
+
+          <div class="label_input_div">
+            <label for="location">Location</label>
+            <p id="auto_select_location" class="auto_select_location">
+              Auto select
+            </p>
+            <div class="edit_location_div">
+              <input
+                type="text"
+                class="location_input"
+                name="location"
+                id="location"
+              />
+              <svg
+                class="loader"
+                id="loader"
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="200"
+                viewBox="0 0 24 24"
+                fill="#000000"
+              >
+                <path
+                  fill="none"
+                  stroke="#000000"
+                  stroke-dasharray="15"
+                  stroke-dashoffset="15"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  d="M12 3C16.9706 3 21 7.02944 21 12"
+                >
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    dur="0.3s"
+                    values="15;0"
+                  />
+                  <animateTransform
+                    attributeName="transform"
+                    dur="1.5s"
+                    repeatCount="indefinite"
+                    type="rotate"
+                    values="0 12 12;360 12 12"
+                  />
+                </path>
+              </svg>
+            </div>
+          </div>
+          <div class="label_input_div">
+            <label for="bio">Bio </label>
+            <textarea
+              name="bio"
+              id="bio"
+              maxlength="200"
+              placeholder="Add your biography"
+            ></textarea>
+          </div>
+
+          <button type="submit" id="submit_profile_changes_btn">
+            Save Changes
+          </button>
+
+          <div class="label_input_div">
+            <label for="email">Email </label>
+            <input
+              class="email_input"
+              type="text"
+              name="email"
+              id="email"
+              disabled
+            />
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- DELETION MODEL -->
+    <div id="delete_model" class="delete_model">
+      <p>Delete your profile picture ?</p>
+      <div class="delete_btns_div">
+        <button id="cancel_delete" class="cancel_delete">Cancel</button>
+        <button id="delete" class="delete">Delete</button>
+      </div>
+    </div>
+
+    <!-- Show Loader Model -->
+
+    <div id="show_loader_model" class="show_loader_model">
+      <p>Saving Changes...</p>
+      <svg
+        class="model_loader"
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="200"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path
+          fill="none"
+          stroke="#000000"
+          stroke-dasharray="15"
+          stroke-dashoffset="15"
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M12 3C16.9706 3 21 7.02944 21 12"
+        >
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            dur="0.3s"
+            values="15;0"
+          />
+          <animateTransform
+            attributeName="transform"
+            dur="1.5s"
+            repeatCount="indefinite"
+            type="rotate"
+            values="0 12 12;360 12 12"
+          />
+        </path>
+      </svg>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back_arrow {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 600;
+    width: 30px;
+    height: 30px;
+}
+
+:root {
+    --WHITE-BG-COLOR: white;
+    --BG-COLOR: #e1eceb;
+    --NAV-ICONS-COLOR: #565d6d;  /* Stroke color */
+}
+
+button {
+    cursor: pointer;
+    color: black;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.no_scroll {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    height:60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    text-align: center;
+    /* margin-top: 1rem; */
+}
+
+.edit_profile_model {
+    height: 100%;
+    background-color: white;
+    overflow: hidden;
+     width: 100vw;
+    padding-bottom: 100px;
+    overflow: auto;
+}
+
+.edit_profile_model.show {
+    width: 100vw;
+    padding-bottom: 100px;
+    overflow: auto;
+    transition : all 0.1s linear;
+}
+
+/* .edit_profile_model {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 600;
+    background-color: white;
+    overflow: auto;
+    padding-bottom: 100px;
+} */
+
+
+#edit_profile_form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.edit_profile_img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+    border-bottom: 1px solid gray;
+    padding-bottom: 20px;
+}
+
+.edit_profile_img p {
+   
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.img_container {
+    min-width: 150px ;
+    max-width: 150px ;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.edit_profile_img img {
+    width: 100%;
+    height: auto;
+   
+}
+
+.edit_profile_photo_div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete_profile_photo {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border-radius: 5px;
+    & path {
+        fill: gray;
+    }
+}
+
+.edit_profile_img label {
+    padding: 5px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+
+.edit_profile_img input[type= "file"] {
+    position: absolute;
+    opacity : 0;
+    width: 0.1px;
+    height: 0.1px;
+    z-index: -1;
+}
+
+.edit_information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: fit-content;
+    gap: 20px;
+}
+
+.label_input_div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.full_name_input, .email_input {
+    height: 50px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: system-ui;
+}
+
+.edit_location_div {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border:  1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.auto_select_location {
+    position: absolute ;
+    top: 2%;
+    right: 2%;
+    color: purple;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.location_input {
+    outline: none !important;
+    border: none !important;
+    font-size: 1.1rem;
+    font-family: system-ui;
+}
+
+.loader {
+    display: none;
+    height: 30px;
+    width: 30px;
+}
+
+.edit_information textarea {
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    height: 150px;
+    font-size: 1.1rem;
+    font-family: system-ui;
+}
+
+#submit_profile_changes_btn {
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: white;
+    background-color: green;
+    font-size: 1.1rem;
+}
+
+.delete_model {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* transform: translate(-50%); */
+    z-index: 300;
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    height: 100px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.delete_model p{
+    font-size: 1.1rem;
+}
+ 
+
+.delete_btns_div {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.delete_btns_div button {
+    padding: 10px;
+    outline: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    width: 80px;
+    height: 30px;
+    font-size: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.cancel_delete {
+    background-color: transparent;
+    border: none;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.overlay {
+    display: none;
+    position : fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.387);
+    z-index: 200;
+    bottom: 0;
+}
+
+.show_loader_model {
+    width: 230px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 23%;
+    z-index: 500;
+    display: none;
+}
+
+.show_loader_model p {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.show_loader_model svg {
+    height: 30px;
+    width: 30px;
+}

@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back_arrow {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 600;
+    width: 25px;
+    height: 25px;
+}
+
+:root {
+    --WHITE-BG-COLOR: white;
+    --BG-COLOR: #e1eceb;
+    --NAV-ICONS-COLOR: #565d6d;  /* Stroke color */
+}
+
+button {
+    cursor: pointer;
+    color: black;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.no_scroll {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    height:60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    text-align: center;
+    /* margin-top: 1rem; */
+}
+
+.setting_dropdown {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+   
+    display: flex;
+    flex-flow: column nowrap;
+    
+    transition: height 0.1s ease;
+    
+     
+    padding: 1rem 0 10px 1.2rem;
+    overflow: auto;
+}
+
+.show_settings {
+    height: 70%;
+    padding: 1rem 0 10px 1.2rem;
+    overflow: auto;
+}
+
+.setting_dropdown::-webkit-scrollbar {
+    display: none;
+}
+
+.setting_dropdown svg {
+    width: 13px;
+    height: 13px;
+    & path {
+        fill: rgba(173, 171, 171, 0.991);
+    }
+}
+
+.settings {
+    margin-bottom: 1rem;
+    margin-left: 8.5rem;
+}
+
+.titles {
+    color: #777;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.options_container {
+    width: 95%;
+    background-color: rgba(209, 207, 207, 0.397);;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(209, 207, 207, 0.837);
+    padding-bottom: 10px;
+}
+
+.option:last-child {
+    border-bottom: none;
+}
+
+.option p {
+     font-size: 1.2rem;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    /* width: 60px;
+    height: 35px; */
+    width: 4.5em;
+    height: 2.5em;
+    border-radius: 20px;
+    background-color: gray;
+    position: absolute;
+    transform: translateX(-55px) translateY(-16px);
+}
+
+input[type="checkbox"]:checked::before {
+    content: "";
+    /* width: 60px;
+    height: 35px; */
+    width: 4.5em;
+    height: 2.5em;
+    border-radius: 20px;
+    background-color: #15a7a2;
+    position: absolute;
+    transform: translateX(-55px) translateY(-16px);
+}
+
+input[type="checkbox"]::after {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ccc;
+    position: absolute;
+    transform: translateX(-52px) translateY(-13.5px);
+     transition: all 0.3s linear;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    transform: translateX(-26px) translateY(-13.5px);
+    transition: all 0.3s linear;
+}
+
+.logout_div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+}
+
+.logout_div svg {
+    width: 22px;
+    height: 22px;
+    & path {
+        fill: black;
+    }
+}
+
+.logout_div p {
+    font-size: 1.2rem;
+}

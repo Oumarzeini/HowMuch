@@ -1,6 +1,14 @@
 import { supabase, IP_INFO_API_KEY, WEATHER_API_KEY } from "./supabase.js";
 
 const initApp = () => {
+  // FRIST CHECKS
+  const customUserInfo = JSON.parse(
+    localStorage.getItem("customUserInfo") || "{}"
+  );
+
+  if (!customUserInfo.full_name) {
+    userName.textContent = JSON.parse(localStorage.getItem("userName"));
+  }
   //DOM FUNCTIONS
 
   const body = document.body;
@@ -8,8 +16,27 @@ const initApp = () => {
   const userLocation = document.getElementById("user_location");
   const userBio = document.getElementById("user_bio");
   const profileImage = document.getElementById("profile_img");
-  const previewImg = document.getElementById("preview_img");
-  profileImage.src = previewImg.src;
+
+  //Add the option to close the settings inside of the settins
+
+  // const handleSettings = () => {
+  //   const settingsIcon = document.getElementById("settings_icon");
+  //   const settingsDropdown = document.getElementById("setting_dropdown");
+  //   settingsIcon.onclick = () => {
+  //     settingsDropdown.classList.toggle("show_settings");
+  //     body.classList.toggle("no_scroll");
+  //     overlay.style.display = "block";
+  //     if (settingsDropdown.classList.contains("show_settings")) {
+  //       overlay.onclick = () => {
+  //         settingsDropdown.classList.toggle("show_settings");
+  //         body.classList.toggle("no_scroll");
+  //         overlay.style.display = "none";
+  //       };
+  //     }
+  //   };
+  // };
+
+  //handleSettings();
 
   const toggleBioBtn = () => {
     const customUserInfo = JSON.parse(
@@ -25,60 +52,6 @@ const initApp = () => {
     }
   };
 
-  const gettingNameAndEmail = async () => {
-    const {
-      data: { user },
-      error,
-    } = await supabase.auth.getUser();
-
-    if (error) {
-      console.log("Error getting user : ", error);
-      return;
-    } else {
-      const email = user.email;
-      const emailInput = document.getElementById("email");
-      emailInput.value = user.email;
-
-      const customUserInfo = JSON.parse(
-        localStorage.getItem("customUserInfo") || "{}"
-      );
-
-      if (!customUserInfo.full_name) {
-        userName.textContent = JSON.parse(localStorage.getItem("userName"));
-      }
-    }
-  };
-
-  const showEditProfilePage = () => {
-    const addBioBtn = document.getElementById("add_bio_btn");
-    addBioBtn.onclick = () => {
-      document.getElementById("edit_profile_model").classList.add("show");
-      document.getElementById("bio").focus();
-    };
-
-    const editProfileBtn = document.getElementById("edit_profile_btn");
-    editProfileBtn.onclick = () => {
-      document.getElementById("edit_profile_model").classList.add("show");
-    };
-
-    const customUserInfo = JSON.parse(
-      localStorage.getItem("customUserInfo") || "{}"
-    );
-
-    const currentName = document.getElementById("full_name");
-    currentName.value = customUserInfo.full_name;
-
-    const currentLocation = document.getElementById("location");
-    currentLocation.value = customUserInfo.location;
-
-    const newBio = document.getElementById("bio");
-    if (customUserInfo.bio) {
-      newBio.value = customUserInfo.bio;
-    } else {
-      newBio.value = "";
-    }
-  };
-
   const setInfo = () => {
     if (localStorage.getItem("customUserInfo")) {
       const customUserInfo = JSON.parse(localStorage.getItem("customUserInfo"));
@@ -87,81 +60,13 @@ const initApp = () => {
       userLocation.textContent = customUserInfo.location;
       userBio.textContent = customUserInfo.bio;
       if (customUserInfo.profile_photo_url) {
-        previewImg.src = customUserInfo.profile_photo_url;
-        profileImage.src = previewImg.src;
+        profileImage.src = customUserInfo.profile_photo_url;
       } else {
-        previewImg.src = "images/profileImage.jpg";
-        profileImage.src = previewImg.src;
+        profileImage.src = "images/profileImage.jpg";
       }
     }
 
     toggleBioBtn();
-  };
-
-  const setProfileImage = () => {
-    const profilePhotoInput = document.getElementById("profile_photo");
-
-    profilePhotoInput.addEventListener("change", (e) => {
-      if (e.target.files.length > 0) {
-        const photo = e.target.files[0];
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-          const base64Image = e.target.result;
-
-          const customUserInfo = JSON.parse(
-            localStorage.getItem("customUserInfo") || "{}"
-          );
-          customUserInfo.profile_photo_url = base64Image;
-
-          localStorage.setItem(
-            "customUserInfo",
-            JSON.stringify(customUserInfo)
-          );
-
-          setInfo();
-        };
-
-        reader.readAsDataURL(photo);
-        profilePhotoInput.value = "";
-        document.getElementById("delete_profile_photo").style.display = "block";
-      }
-    });
-  };
-
-  const deleteProfilePhoto = () => {
-    const deleteBtn = document.getElementById("delete_profile_photo");
-    const deleteModel = document.getElementById("delete_model");
-    const confirmDeleteBtn = document.getElementById("delete");
-    const cancelDeleteBtn = document.getElementById("cancel_delete");
-    const overlay = document.getElementById("overlay");
-    const body = document.body;
-    deleteBtn.onclick = () => {
-      deleteModel.style.display = "inline-flex";
-      overlay.style.display = "block";
-      body.classList.add("no_scroll");
-
-      confirmDeleteBtn.onclick = () => {
-        const customUserInfo = JSON.parse(
-          localStorage.getItem("customUserInfo") || "{}"
-        );
-
-        customUserInfo.profile_photo_url = null;
-        localStorage.setItem("customUserInfo", JSON.stringify(customUserInfo));
-        setInfo();
-
-        deleteModel.style.display = "none";
-        overlay.style.display = "none";
-        body.classList.remove("no_scroll");
-        deleteBtn.style.display = "none";
-      };
-
-      cancelDeleteBtn.onclick = () => {
-        deleteModel.style.display = "none";
-        overlay.style.display = "none";
-        body.classList.remove("no_scroll");
-      };
-    };
   };
 
   // const rateTrader = () => {
@@ -307,46 +212,6 @@ const initApp = () => {
       : (expandBioBtn.textContent = "Read more");
   };
 
-  const autoSelectLocation = document.getElementById("auto_select_location");
-  autoSelectLocation.onclick = () => {
-    getLocationWithOWM();
-    setInfo();
-  };
-
-  const backArrow = document.getElementById("back_arrow");
-  backArrow.onclick = () => {
-    document.getElementById("edit_profile_model").classList.remove("show");
-  };
-  const editProfileForm = document.getElementById("edit_profile_form");
-  editProfileForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const customUserInfo = JSON.parse(
-      localStorage.getItem("customUserInfo") || "{}"
-    );
-
-    const newName = document.getElementById("full_name").value.trim();
-
-    customUserInfo.full_name = newName;
-
-    const newLocation = document.getElementById("location").value;
-
-    customUserInfo.location = newLocation;
-
-    const newBio = document.getElementById("bio").value.trim();
-    customUserInfo.bio = newBio;
-
-    localStorage.setItem("customUserInfo", JSON.stringify(customUserInfo));
-
-    setInfo();
-  });
-
-  const submitProfileChangesBtn = document.getElementById(
-    "submit_profile_changes_btn"
-  );
-  submitProfileChangesBtn.onclick = () => {
-    document.getElementById("edit_profile_model").classList.remove("show");
-  };
-
   //TRACKING PRODUCTS COUNT
   const stockProducts = JSON.parse(
     localStorage.getItem("stockProducts") || "[]"
@@ -440,11 +305,7 @@ const initApp = () => {
   getLocation();
 
   toggleBioBtn();
-  gettingNameAndEmail();
-  setProfileImage();
-  showEditProfilePage();
   setInfo();
-  deleteProfilePhoto();
 };
 
 document.addEventListener("DOMContentLoaded", initApp());
