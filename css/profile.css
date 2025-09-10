@@ -77,9 +77,9 @@ header {
 .settings_icon {
     position: fixed;
     top: 15px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
     z-index: 900;
 }
 

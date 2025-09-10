@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
+    <link rel="icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/settings.css" />
   </head>
   <body>
@@ -28,7 +29,11 @@
 
       <h3 class="titles">Profile</h3>
       <div class="options_container">
-        <div id="edit_profile_div" class="option">
+        <div
+          onclick="window.location.href='edit_profile.html'"
+          id="edit_profile_div"
+          class="option"
+        >
           <p>Edit Profile</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -43,22 +48,35 @@
             />
           </svg>
         </div>
-        <div class="option">
-          <p>Acoount deltails</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="200"
-            height="200"
-            viewBox="0 0 17 16"
-          >
-            <path
-              fill="#000000"
-              fill-rule="evenodd"
-              d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
-            />
-          </svg>
+        <div id="account_details" class="option account_details">
+          <div class="account_details_div">
+            <p>Account deltails</p>
+            <svg
+              id="account_details_svg"
+              class="account_details_svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 17 16"
+            >
+              <path
+                fill="#000000"
+                fill-rule="evenodd"
+                d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
+              />
+            </svg>
+          </div>
+          <div class="email_dropdown">
+            <p>
+              Email: <br />
+              example@example.com
+            </p>
+          </div>
         </div>
-        <div class="option">
+        <div
+          onclick="window.location.href='privacy_settings.html'"
+          class="option"
+        >
           <p>Privacy Settings</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +103,7 @@
 
       <h3 class="titles">Support</h3>
       <div class="options_container">
-        <div class="option">
+        <div onclick="window.location.href='faqs.html'" class="option">
           <p>FAQ's</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"

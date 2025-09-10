@@ -126,7 +126,55 @@ header {
     align-items: center;
     border-bottom: 1px solid rgba(209, 207, 207, 0.837);
     padding-bottom: 10px;
+    cursor: pointer;
 }
+
+.account_details_svg {
+    transform: rotate(90deg);
+    transition: transform 0.3s linear;
+}
+
+/* ACCOUNT DROPDOWN */
+
+.account_details{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.email_dropdown {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+
+.account_details:hover {
+    & p {
+        text-decoration: underline;
+    }
+    & svg {
+        transform: rotate(-90deg);
+    }
+    & .email_dropdown {
+        width: 100%;
+        height: 60px;
+        overflow:visible;        
+        & p {
+            text-decoration: none;
+        }
+    }
+}
+
+.account_details_div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .option:last-child {
     border-bottom: none;
@@ -139,6 +187,7 @@ header {
 input[type="checkbox"] {
     position: relative;
     appearance: none;
+    cursor: pointer;
 }
 
 input[type="checkbox"]::before {

@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back_arrow {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 600;
+    width: 25px;
+    height: 25px;
+}
+
+:root {
+    --WHITE-BG-COLOR: white;
+    --BG-COLOR: #e1eceb;
+    --NAV-ICONS-COLOR: #565d6d;  /* Stroke color */
+}
+
+button {
+    cursor: pointer;
+    color: black;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.no_scroll {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    height:60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    text-align: center;
+}
+
+#privacy_form {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.portfolio_visibility, .rating_permission {
+    display: grid;
+    grid-template-rows: 35px 1fr;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 400px;
+}
+
+section h3 {
+    margin: 5px 0 1rem 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+.question {
+    font-size: 18px;
+}
+
+.choices_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 1px solid #ccc;
+    padding: 0 10px 10px 10px;
+    font-size: 1rem;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input_label_div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    accent-color: rgb(48, 218, 48);
+}
+
+label {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.explanation {
+    margin-left: 15px;
+    color: gray;
+}
+
+.btns_div {
+    margin: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 30px;
+}
+
+.btns_div button {
+    width: 150px;
+    height: 40px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: grid;
+    place-content: center;
+}
+
+.btns_div button[type="submit"] {
+    background-color: green;
+    color: white;
+}

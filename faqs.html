@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ'S</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/faqs.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="header">FAQ's</h2>
+    </header>
+
+    <svg
+      onclick="window.location.href='settings.html'"
+      id="back_arrow"
+      class="back_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="200"
+      height="200"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path
+        fill="#000000"
+        d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225L16 22Z"
+      />
+    </svg>
+
+    <main>
+      <div class="container">
+        <div id="option" class="option">
+          <p>How do i post a product</p>
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 17 16"
+          >
+            <path
+              fill="#000000"
+              fill-rule="evenodd"
+              d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
+            />
+          </svg>
+        </div>
+        <div class="info">
+          <p>
+            After signing up, navigate to your dashboard and click 'Post New
+            Product'. Add details including title, description, price, and
+            photos. Once submitted, your product will appear in search results
+            and on your profile.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="option" class="option">
+          <p>Can i message Traders directly ?</p>
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 17 16"
+          >
+            <path
+              fill="#000000"
+              fill-rule="evenodd"
+              d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
+            />
+          </svg>
+        </div>
+        <div class="info">
+          <p>
+            Absolutely! Our direct messaging system allows you to communicate
+            privately with any trader on the platform. Simply visit their
+            profile and click the 'Message' button to start a conversation.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="option" class="option">
+          <p>Is my data safe ?</p>
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 17 16"
+          >
+            <path
+              fill="#000000"
+              fill-rule="evenodd"
+              d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
+            />
+          </svg>
+        </div>
+        <div class="info">
+          <p>
+            We take security seriously. HowMuch uses bank-level encryption to
+            protect your personal information and transaction details. We never
+            share your data with third parties without your explicit consent.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div id="option" class="option">
+          <p>What payment methods are supported ?</p>
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            width="200"
+            height="200"
+            viewBox="0 0 17 16"
+          >
+            <path
+              fill="#000000"
+              fill-rule="evenodd"
+              d="M6.077 1.162c0 .225.062.45.196.65l4.156 6.229l-4.197 6.037a1.175 1.175 0 0 0 .328 1.629a1.174 1.174 0 0 0 1.63-.325l4.63-6.688c.264-.394.266-.908.002-1.304L8.233.51a1.178 1.178 0 0 0-2.156.652z"
+            />
+          </svg>
+        </div>
+        <div class="info">
+          <p>
+            While we facilitate connections between traders, payments are
+            arranged directly between parties. We recommend using secure payment
+            methods like bank transfers, PayPal, or escrow services for
+            high-value transactions.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    const options = document.querySelectorAll(".option");
+    options.forEach((option) => {
+      const svg = option.parentElement.querySelector(".svg");
+      option.onclick = () => {
+        option.nextElementSibling.classList.toggle("show_info");
+        svg.classList.toggle("rotate");
+      };
+    });
+  </script>
+</html>

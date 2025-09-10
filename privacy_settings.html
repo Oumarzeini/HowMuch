@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Settings</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/privacy_settings.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="header">Privacy Settings</h2>
+    </header>
+
+    <svg
+      onclick="window.location.href='settings.html'"
+      id="back_arrow"
+      class="back_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="200"
+      height="200"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path
+        fill="#000000"
+        d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225L16 22Z"
+      />
+    </svg>
+
+    <main>
+      <form id="privacy_form">
+        <section class="portfolio_visibility">
+          <h3>Protfolio Visibility</h3>
+          <div class="choices_container">
+            <p class="question">Who can see your product portfolio ?</p>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input type="radio" checked name="everyone" id="everyone" />
+                <label for="everyone">Everyone</label>
+              </div>
+              <div class="explanation">
+                <p>Your portfolio is visible to all users.</p>
+              </div>
+            </div>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input type="radio" name="connections" id="my_conncections" />
+                <label for="my_conncections">My Connections</label>
+              </div>
+              <div class="explanation">
+                <p>Only users you are connected with can view.</p>
+              </div>
+            </div>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input
+                  type="radio"
+                  name="portfolio_no_one"
+                  id="portfolio_no_one"
+                />
+                <label for="portfolio_no_one">No One</label>
+              </div>
+              <div class="explanation">
+                <p>Your portfolio is private.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="rating_permission">
+          <h3>Rating Permission</h3>
+          <div class="choices_container">
+            <p class="question">Who can rate your products ?</p>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input
+                  type="radio"
+                  name="everyone_rating"
+                  id="everyone_rating"
+                  checked
+                />
+                <label for="everyone_rating">Everyone</label>
+              </div>
+              <div class="explanation">
+                <p>Any user can rate your service</p>
+              </div>
+            </div>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input type="radio" name="buyers" id="my_buyers" />
+                <label for="my_buyers">My Buyers</label>
+              </div>
+              <div class="explanation">
+                <p>
+                  Only users who have purchased from you can rate (recommanded).
+                </p>
+              </div>
+            </div>
+
+            <div class="choice">
+              <div class="input_label_div">
+                <input type="radio" name="no_one" id="no_one" />
+                <label for="no_one">No One</label>
+              </div>
+              <div class="explanation">
+                <p>No one can rate your service.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="btns_div">
+          <button type="reset">Reset</button>
+          <button type="submit">Save Changes</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
