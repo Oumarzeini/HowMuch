@@ -78,3 +78,19 @@ const search = () => {
 };
 
 search();
+
+const sideBar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+const menuIcon = document.getElementById("menu_icon");
+const closeMenu = document.getElementById("close_menu");
+console.log(overlay.outerHTML);
+
+menuIcon.onclick = () => {
+  sideBar.classList.add("show_sidebar");
+  overlay.style.display = "block";
+};
+
+closeMenu.onclick = () => {
+  sideBar.classList.remove("show_sidebar");
+  overlay.style.display = "none";
+};

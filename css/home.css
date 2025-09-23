@@ -13,42 +13,165 @@ body {
     font-family: system-ui;
     display: flex;
     flex-direction: column;
-    margin-top: 130px;
+    margin-top: 100px;
     background-color: white;
 }
 
-header {
+body.no_scroll {
+    overflow: hidden;
+}
+
+.overlay {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.131);
     position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    display: none;
+}
+
+.menu_icon {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    z-index: 100;
+}
+
+.side_bar {
+    position: relative;
+    position: fixed;
+    width: 0;
+    max-height: 100vh;
+    background-color: white;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    z-index: 120;
+    overflow: hidden;
+    box-shadow: 0 0 2px gray;
+    border-radius: 0 0 10px 0;
+    transition: width 0.1s linear;
+}
+
+.side_bar.show_sidebar {
+    width: 80%;
+    padding: 10px 10px 100px 10px;
+    overflow: visible;
+}
+
+#close_menu {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.side_bar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    list-style-type: none;
+    font-size: 1.2rem;
+}
+
+.side_bar ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.side_bar p {
+    font-size: 1.3rem;
+    color: gray;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.side_bar svg {
+    width: 20px;
+    height: 20px;
+    & path{
+        fill: black;
+    }
+}
+
+#prices_icon {
+    & path {
+        fill: none;
+        stroke: black;
+    }
+}
+
+#support_icon {
+    width: 25px;
+    height: 25px;
+}
+
+#faq_icon {
+    width: 25px;
+    height: 30px;
+}
+
+
+.line {
+    width: 95%;
+    height: .5px;
+    background-color: gray;
+    margin: 10px auto 0;
+}
+
+.howmuch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 5px;
+}
+
+.howmuch p {
+    font-weight: 500;
+    font-family: cursive;
+    color: black;
+}
+
+header {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: white;
-    height:130px ;
+    height:100px ;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
     border-bottom: 1px solid gray;
 }
 
 .header {
     text-align: center;
     margin-top: 1rem;
+    font-size: 1.2rem;
 }
 
-main {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 750px;
-
-    /* background-image: url(../images/texture_bg.jpeg);
-    background-size: contain;
-    background-position: center; */
-}
 
 form {
     width: 90%;
-    background-color:  #d0d0d086;
+    height: 30px;
+    background-color:  white;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -70,7 +193,115 @@ form i {
     color: rgb(173, 169, 169);
 }
 
+main {
+    flex-grow: 1;
+    display: flex;
+   
+    min-height: 750px;
+    padding-bottom: 100px;
+    background-image: url(../images/icons_bg.jpg);
+    background-size: contain;
+    background-position: center;
+}
+
+
+.dashboard {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(2px);
+}
+
+.inventory {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-areas: 
+    "hd hd"
+    "tp tp"
+    "hs ls";
+    gap: 10px;
+    padding: 10px;
+}
+
+.statistics_headers {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+    grid-area: hd;
+    color: white;
+    background-color: #32a56d;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.statistic {
+    min-width: 180px;
+    height: 120px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+
+.total_products {
+    grid-area: tp;
+    background-color: #1f7c51;
+}
+
+.highest {
+    grid-area: hs;
+    background-color:#32a56d;
+}
+
+.lowest {
+    grid-area: ls;
+    background-color:#32a56d;
+}
+
+.statistic p {
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    font-weight: 450;
+}
+
+#number {
+    font-size: 2rem;
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.bar {
+    width: 90%;
+    height: 10px;
+    border-radius: 3px;
+    margin-inline: auto;
+    margin-top: 1rem;
+    background-color: #13412e;
+}
+
+.engagement {
+    width: 100%;
+    height: fit-content;
+      display: flex;
+     flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.likes, .comments, .shares {
+     background-color: #1f7c51;
+}
+
 .products_list {
+    min-width: 100%;
     max-width: 100%;
     height: 70%;
     padding: 10px;
@@ -81,6 +312,7 @@ form i {
     flex-direction: column;
     gap: 2rem;
     overflow: auto;
+    background-color: transparent;
 }
 
 .add_product_btn {
@@ -143,6 +375,7 @@ form i {
 }
 
 nav {
+    height : 60px;
     display: flex;
     width: 100%;
     justify-content: center;
@@ -153,9 +386,9 @@ nav {
     z-index: 100;
     border-top: 2px solid gray;
     background-color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    padding: 10px;
 }
+
 
 nav ul {
     display: flex;
@@ -190,6 +423,11 @@ svg {
 .home_icon ~ p {
     color: green;
     font-weight: 500;
+}
+
+.people_icon {
+  width: 25px;
+  height: 25px;
 }
 
 .active {

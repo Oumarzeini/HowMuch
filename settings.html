@@ -6,6 +6,7 @@
     <title>Settings</title>
     <link rel="icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/settings.css" />
+    <script type="module" src="js/settings.js" defer></script>
   </head>
   <body>
     <svg
@@ -67,10 +68,8 @@
             </svg>
           </div>
           <div class="email_dropdown">
-            <p>
-              Email: <br />
-              example@example.com
-            </p>
+            <p>Email :</p>
+            <p class="user_email">example@example.com</p>
           </div>
         </div>
         <div
@@ -118,7 +117,7 @@
             />
           </svg>
         </div>
-        <div class="option">
+        <div onclick="window.location.href='contact_us.html'" class="option">
           <p>Contact Us</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +132,7 @@
             />
           </svg>
         </div>
-        <div class="option">
+        <div onclick="window.location.href='about_app.html'" class="option">
           <p>About App</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +150,7 @@
       </div>
 
       <div style="margin-top: 1rem" class="options_container">
-        <div class="logout_div">
+        <div id="sign_out_div" class="logout_div">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="200"
@@ -164,10 +163,56 @@
             />
           </svg>
           <p style="color: red; font-weight: 500; letter-spacing: 1px">
-            Logout
+            Sign Out
           </p>
         </div>
       </div>
     </main>
+
+    <div id="sign_out_model" class="logout_model">
+      <p>Sign out of this account ?</p>
+      <div class="btns_div">
+        <button id="cancel" class="cancel">Cancel</button>
+        <button id="sign_out" class="logout">Sign Out</button>
+      </div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="show_loader_model" class="show_loader_model">
+      <p>Saving Changes...</p>
+      <svg
+        class="model_loader"
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="200"
+        viewBox="0 0 24 24"
+        fill="#000000"
+      >
+        <path
+          fill="none"
+          stroke="#000000"
+          stroke-dasharray="15"
+          stroke-dashoffset="15"
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M12 3C16.9706 3 21 7.02944 21 12"
+        >
+          <animate
+            fill="freeze"
+            attributeName="stroke-dashoffset"
+            dur="0.3s"
+            values="15;0"
+          />
+          <animateTransform
+            attributeName="transform"
+            dur="1.5s"
+            repeatCount="indefinite"
+            type="rotate"
+            values="0 12 12;360 12 12"
+          />
+        </path>
+      </svg>
+    </div>
   </body>
 </html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      header {
+        background: #1e293b;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      header h1 {
+        font-size: 1.5rem;
+        margin: 0;
+      }
+      .dashboard {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+      @media (max-width: 900px) {
+        .dashboard {
+          grid-template-columns: 1fr;
+        }
+      }
+      .section {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.5rem;
+      }
+      .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0.5rem;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+      .card {
+        background: #f9fafb;
+        padding: 1rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+      .card h3 {
+        font-size: 1.2rem;
+        margin: 0.3rem 0;
+      }
+      .chart-container {
+        margin-top: 1rem;
+        height: 250px;
+      }
+      canvas {
+        width: 100% !important;
+        height: 100% !important;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.8rem;
+        background: #f1f5f9;
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>📊 Price Tracker Dashboard</h1>
+      <div>User Profile</div>
+    </header>
+
+    <main class="dashboard">
+      <!-- Global Insights -->
+      <div>
+        <div class="section">
+          <h2>🌍 Global Insights</h2>
+          <div class="cards">
+            <div class="card">
+              <p>Most Expensive</p>
+              <h3>$999</h3>
+              <p>Product A</p>
+            </div>
+            <div class="card">
+              <p>Cheapest</p>
+              <h3>$5</h3>
+              <p>Product B</p>
+            </div>
+            <div class="card">
+              <p>Biggest Drop</p>
+              <h3>-45%</h3>
+              <p>Product C</p>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="trendingProducts"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>📦 Category Insights</h2>
+          <div class="chart-container">
+            <canvas id="categoryChart"></canvas>
+          </div>
+          <div class="chart-container">
+            <canvas id="priceTrends"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>👥 Community Activity</h2>
+          <div class="cards">
+            <div class="card">
+              <p>New Posts Today</p>
+              <h3>245</h3>
+            </div>
+            <div class="card">
+              <p>Top Contributor</p>
+              <h3>@user123</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- User Insights -->
+      <div>
+        <div class="section">
+          <h2>👤 Your Inventory</h2>
+          <div class="cards">
+            <div class="card">
+              <p>Total Products</p>
+              <h3>32</h3>
+            </div>
+            <div class="card">
+              <p>Low Stock</p>
+              <h3>4</h3>
+            </div>
+            <div class="card">
+              <p>High Stock</p>
+              <h3>10</h3>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="inventoryPie"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>💰 Performance</h2>
+          <div class="cards">
+            <div class="card">
+              <p>Best Product</p>
+              <h3>Product D</h3>
+            </div>
+            <div class="card">
+              <p>Total Value</p>
+              <h3>$4,230</h3>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="priceComparison"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>🔥 Engagement</h2>
+          <div class="cards">
+            <div class="card">
+              <p>Total Likes</p>
+              <h3>540</h3>
+            </div>
+            <div class="card">
+              <p>Total Comments</p>
+              <h3>120</h3>
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="engagementChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2025 Price Tracker • All rights reserved</footer>
+
+    <script>
+      // Trending Products - Bar Chart
+      new Chart(document.getElementById("trendingProducts"), {
+        type: "bar",
+        data: {
+          labels: ["Product A", "Product B", "Product C", "Product D"],
+          datasets: [
+            {
+              label: "Posts",
+              data: [120, 90, 75, 60],
+              backgroundColor: "#3b82f6",
+            },
+          ],
+        },
+      });
+
+      // Category Insights - Bar Chart
+      new Chart(document.getElementById("categoryChart"), {
+        type: "bar",
+        data: {
+          labels: ["Electronics", "Fashion", "Home", "Toys"],
+          datasets: [
+            {
+              label: "Products",
+              data: [80, 60, 40, 20],
+              backgroundColor: ["#ef4444", "#22c55e", "#3b82f6", "#f59e0b"],
+            },
+          ],
+        },
+      });
+
+      // Price Trends - Line Chart
+      new Chart(document.getElementById("priceTrends"), {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr"],
+          datasets: [
+            {
+              label: "Electronics",
+              data: [500, 480, 470, 460],
+              borderColor: "#3b82f6",
+              fill: false,
+            },
+            {
+              label: "Fashion",
+              data: [150, 160, 155, 145],
+              borderColor: "#ef4444",
+              fill: false,
+            },
+          ],
+        },
+      });
+
+      // Inventory Pie Chart
+      new Chart(document.getElementById("inventoryPie"), {
+        type: "pie",
+        data: {
+          labels: ["Electronics", "Fashion", "Home"],
+          datasets: [
+            {
+              data: [12, 10, 10],
+              backgroundColor: ["#3b82f6", "#22c55e", "#f59e0b"],
+            },
+          ],
+        },
+      });
+
+      // Price Comparison - Line Chart
+      new Chart(document.getElementById("priceComparison"), {
+        type: "line",
+        data: {
+          labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+          datasets: [
+            {
+              label: "Your Products",
+              data: [200, 210, 190, 220],
+              borderColor: "#3b82f6",
+              fill: false,
+            },
+            {
+              label: "Market Average",
+              data: [180, 185, 178, 190],
+              borderColor: "#22c55e",
+              fill: false,
+            },
+          ],
+        },
+      });
+
+      // Engagement - Bar Chart
+      new Chart(document.getElementById("engagementChart"), {
+        type: "bar",
+        data: {
+          labels: ["Likes", "Comments", "Shares"],
+          datasets: [
+            {
+              label: "Engagement",
+              data: [540, 120, 60],
+              backgroundColor: ["#3b82f6", "#ef4444", "#f59e0b"],
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

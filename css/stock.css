@@ -31,32 +31,30 @@ body.no_scroll {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     background-color: white;
-    height:130px ;
+    height:100px ;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    justify-content: space-between;
     border-bottom: 1px solid gray;
-    z-index: 500;
 }
 
 .header {
     text-align: center;
     margin-top: 1rem;
+    font-size: 1.2rem;
 }
 
-
-
 .add_svg {
-    width: 40px;
-    height: 40px;
-    position: fixed;
-    top: 16px;
-    right: 10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
     z-index: 500;
     & path {
         fill: green;
@@ -69,14 +67,15 @@ main {
     flex-direction: column;
     min-height: 750px;
     
-    /* background-image: url(../images/texture_bg.jpeg);
+     background-image: url(../images/icons_bg.jpg);
     background-size: contain;
-    background-position: center; */
+    background-position: center;
 }
 
 #search_form {
     width: 90%;
-    background-color:  #d0d0d086;
+    height: 30px;
+    background-color:  white;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -88,7 +87,7 @@ main {
 
 #search_form input {
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     outline: none;
     border: none;
 }
@@ -103,7 +102,6 @@ main {
     height: 70%;
     padding: 10px;
     padding-inline: 15px;
-    padding-top: 20px;
     padding-bottom: 100px;
     display: flex;
     flex-direction: column;

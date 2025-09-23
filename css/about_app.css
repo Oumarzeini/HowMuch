@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.back_arrow {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 600;
+    width: 25px;
+    height: 25px;
+}
+
+:root {
+    --WHITE-BG-COLOR: white;
+    --BG-COLOR: #e1eceb;
+    --NAV-ICONS-COLOR: #565d6d;  /* Stroke color */
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    cursor: pointer;
+    color: black;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100dvh;
+    font-family: system-ui;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body.no_scroll {
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    height:60px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.header {
+    text-align: center;
+}
+
+.version, .about, .resources {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid gray;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.about , .resources {
+    margin-top: 1.5rem;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.designed {
+    margin-top: 10px;
+    color: gray;
+}
+
+.options {
+    display: flex;
+    margin-top: 3rem;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.option p {
+    text-align: center;
+    color: blue;
+}
+
+.api_svg {
+    width: 20px;
+}

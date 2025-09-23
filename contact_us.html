@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/contact_us.css" />
+  </head>
+  <body>
+    <header>
+      <h2 class="header">Contact Us</h2>
+    </header>
+
+    <svg
+      onclick="window.location.href='settings.html'"
+      id="back_arrow"
+      class="back_arrow"
+      xmlns="http://www.w3.org/2000/svg"
+      width="200"
+      height="200"
+      viewBox="0 0 24 24"
+      fill="#000000"
+    >
+      <path
+        fill="#000000"
+        d="M16 22L6 12L16 2l1.775 1.775L9.55 12l8.225 8.225L16 22Z"
+      />
+    </svg>
+
+    <main>
+      <h3>
+        We're here to help you get the most out of HowMuch. Question, support ,
+        help or anything you need , Just fill the form below.
+      </h3>
+
+      <form class="contact_form" id="contact_form">
+        <div class="label_input_div">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+
+        <div class="label_input_div">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="label_input_div">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" />
+        </div>
+
+        <div class="label_input_div">
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+    <div class="spacer"></div>
+  </body>
+</html>
