@@ -38,6 +38,7 @@ body {
     font-family: system-ui;
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
     background-color: var(--BG-COLOR);
 }
 
@@ -50,23 +51,54 @@ body.no_scroll {
 }
 
 header {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-color: var(--BG-COLOR);
-    height:60px ;
+    background-color: white;
+    height:100px ;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    justify-content: space-between;
     border-bottom: 1px solid gray;
 }
 
 .header {
     text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
 }
+
+
+form {
+    width: 90%;
+    height: 30px;
+    background-color:  white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin: 0 auto 1rem;
+    border: 1px solid #83838399;
+    border-radius: 15px;
+}
+
+input {
+    background-color: transparent;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+}
+
+form i {
+    font-size: 1.2rem;
+    color: rgb(173, 169, 169);
+}
+
 
 main {
     min-height: 100vh;
+    padding-bottom: 100px;
     background-color: var(--BG-COLOR);
 }
 

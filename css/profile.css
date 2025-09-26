@@ -104,11 +104,25 @@ main::-webkit-scrollbar {
 
 .profile_figure {
     height: fit-content;
-    width: 100%;
+    width: 80%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: white;
+    
+}
+
+.added_img_container {
+    min-width: 150px ;
+    max-width: 150px ;
+    min-height: 150px;
+    max-height: 150px;
+    margin-right: 10px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .profile_img {
@@ -116,10 +130,25 @@ main::-webkit-scrollbar {
    height: auto;
 }
 
+.profile_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    height: 100%;
+    margin-top: 1.5rem;
+}
+
+.username{
+    color: gray;
+}
+
+/* .name_and_username_div */
+
 .profile_figure figcaption {
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    white-space: nowrap;
     font-size: 1.4rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -143,21 +172,10 @@ main::-webkit-scrollbar {
     margin-bottom: 5px;
 }
 
-.rating_div {
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-}
-
-.upper_stars_div {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-}
-
 .bio_div {
     width: 80%;
-    margin: 2rem auto 0;
+    margin-inline: auto;
+    margin-top :1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -188,6 +206,7 @@ main::-webkit-scrollbar {
     overflow: hidden;
     transition: all 0.3s linear;
     font-size: 1rem;
+    text-align: left;
 }
 
 .bio.expand {
@@ -202,6 +221,20 @@ main::-webkit-scrollbar {
     border: none;
     outline: none;
     font-size: 14px;
+}
+
+.rating_div {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-top: 1rem;
+}
+
+.upper_stars_div {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
 }
 
 .product_count_dive {

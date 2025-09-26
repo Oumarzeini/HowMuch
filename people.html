@@ -6,14 +6,770 @@
     <title>People</title>
     <link rel="icon" href="images/logo.png" />
     <link rel="stylesheet" href="css/people.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script type="module" src="" defer></script>
   </head>
   <body>
     <header>
       <h2 class="header">Find People</h2>
+      <form id="form">
+        <i class="fa-solid fa-search"></i>
+        <input
+          placeholder="search users"
+          type="text"
+          name="search"
+          id="search"
+        />
+      </form>
     </header>
 
     <main>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_card_container">
+        <div class="profile_card">
+          <img src="images/my _img.jpg" alt="" width="50" height="50" />
+          <div class="name_bio_div">
+            <p class="name">Omar Zeini</p>
+            <p class="username">
+              @omar_zeini
+              <!-- <span class="location">Kenitra</span> -->
+            </p>
+            <p class="followers">
+              1.2k Followers
+              <!-- <span class="mutual">- 5 mutuals</span> -->
+            </p>
+            <p class="follow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 21 21"
+              >
+                <path
+                  fill="none"
+                  stroke="black"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5.5 10.5h10m-5-5v10"
+                />
+              </svg>
+              Follow
+            </p>
+            <p class="bio">
+              We have very high quality products with very low prices...
+            </p>
+            <div class="btns_div">
+              <button class="message">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="none"
+                    stroke="green"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3.464 16.828C2 15.657 2 14.771 2 11c0-3.771 0-5.657 1.464-6.828C4.93 3 7.286 3 12 3c4.714 0 7.071 0 8.535 1.172C22 5.343 22 7.229 22 11c0 3.771 0 4.657-1.465 5.828C19.072 18 16.714 18 12 18c-2.51 0-3.8 1.738-6 3v-3.212c-1.094-.163-1.899-.45-2.536-.96Z"
+                  />
+                </svg>
+                Message
+              </button>
+              <button class="view_profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="200"
+                  height="200"
+                  viewBox="0 0 24 24"
+                  fill="green"
+                >
+                  <g fill="none" stroke="green">
+                    <path
+                      stroke-linejoin="round"
+                      d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+                    />
+                    <circle cx="12" cy="7" r="3" />
+                  </g>
+                </svg>
+                View Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="profile_card_container">
         <div class="profile_card">
           <img src="images/my _img.jpg" alt="" width="50" height="50" />

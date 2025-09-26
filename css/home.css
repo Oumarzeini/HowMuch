@@ -249,6 +249,7 @@ main {
     flex-direction: column;
     gap: 10px;
     color: white;
+    position: relative;
 }
 
 .total_products {
@@ -298,6 +299,26 @@ main {
 
 .likes, .comments, .shares {
      background-color: #1f7c51;
+}
+
+.statistic_icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.arrow_icons {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 50%;
 }
 
 .products_list {

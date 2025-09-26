@@ -66,14 +66,50 @@
         <div class="inventory">
           <p class="statistics_headers">Your Inventory</p>
           <div class="statistic total_products">
+            <svg
+              class="statistic_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 2048 2048"
+            >
+              <path
+                fill="white"
+                d="m960 120l832 416v1040l-832 415l-832-415V536l832-416zm625 456L960 264L719 384l621 314l245-122zM960 888l238-118l-622-314l-241 120l625 312zM256 680v816l640 320v-816L256 680zm768 1136l640-320V680l-640 320v816z"
+              />
+            </svg>
             <p>Total Products</p>
             <p id="number" class="number">97</p>
           </div>
           <div class="statistic highest">
+            <svg
+              class="arrow_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 2048 2048"
+            >
+              <path
+                fill="white"
+                d="M2048 384v640h-128V603l-768 768l-384-384l-675 674l-90-90l765-766l384 384l677-677h-421V384h640z"
+              />
+            </svg>
             <p>High Stock</p>
             <p id="number" class="number">63</p>
           </div>
           <div class="statistic lowest">
+            <svg
+              class="arrow_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 2048 2048"
+            >
+              <path
+                fill="white"
+                d="M1920 1024h128v640h-640v-128h421l-677-677l-384 384L3 477l90-90l675 674l384-384l768 768v-421z"
+              />
+            </svg>
             <p>Low Stock</p>
             <p id="number" class="number">34</p>
           </div>
@@ -85,15 +121,59 @@
           <p class="statistics_headers">Engagement</p>
 
           <div class="statistic likes">
+            <svg
+              class="statistic_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 48 48"
+            >
+              <path
+                fill="none"
+                stroke="white"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="4"
+                d="M15 8C8.925 8 4 12.925 4 19c0 11 13 21 20 23.326C31 40 44 30 44 19c0-6.075-4.925-11-11-11c-3.72 0-7.01 1.847-9 4.674A10.987 10.987 0 0 0 15 8Z"
+              />
+            </svg>
             <p>Total Likes</p>
             <p id="number" class="number">31.6k</p>
           </div>
           <div class="statistic comments">
+            <svg
+              class="statistic_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="white"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M7.09 2.75a4 4 0 0 0-4 4v6.208a4 4 0 0 0 4 4h.093v3.792a.5.5 0 0 0 .839.368l4.52-4.16h4.369a4 4 0 0 0 4-4V6.75a4 4 0 0 0-4-4z"
+              />
+            </svg>
             <p>Total Comments</p>
             <p id="number" class="number">15.4k</p>
           </div>
 
           <div class="statistic shares">
+            <svg
+              class="statistic_icons"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="200"
+              viewBox="0 0 32 32"
+            >
+              <path
+                fill="white"
+                d="M19.719 5.281L18.28 6.72L24.563 13H11c-3.855 0-7 3.145-7 7s3.145 7 7 7v-2c-2.773 0-5-2.227-5-5s2.227-5 5-5h13.563l-6.282 6.281l1.438 1.438l8-8l.687-.719l-.687-.719z"
+              />
+            </svg>
             <p>Total Shares</p>
             <p id="number" class="number">7.3k</p>
           </div>
@@ -288,7 +368,7 @@
 
           Support
         </p>
-        <li>
+        <li onclick="window.location.href='faqs.html'">
           <svg
             id="faq_icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -303,7 +383,7 @@
           </svg>
           FAQ
         </li>
-        <li>
+        <li onclick="window.location.href='contact_us.html'">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="200"
@@ -319,7 +399,7 @@
           Contact Us
         </li>
 
-        <li>
+        <li onclick="window.location.href='settings.html'">
           <svg
             class="settings_icon"
             onclick="window.location.href='settings.html'"
